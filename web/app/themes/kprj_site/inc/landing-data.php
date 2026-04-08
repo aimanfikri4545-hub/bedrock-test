@@ -18,19 +18,19 @@ function kprj_site_get_landing_data(): array
         'growth_cards' => [
             [
                 'title' => 'Engineering & Construction',
-                'image' => 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+                'image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Group-1625.png',
             ],
             [
                 'title' => 'Property & Asset Management',
-                'image' => 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?auto=format&fit=crop&w=800&q=80',
+                'image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Group-1626.png',
             ],
             [
                 'title' => 'Environment',
-                'image' => 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80',
+                'image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Group-1627.png',
             ],
             [
                 'title' => 'Digital Technology Services',
-                'image' => 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=800&q=80',
+                'image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Group-1628.png',
             ],
         ],
         'reels' => [
