@@ -18,6 +18,12 @@ add_action('after_setup_theme', 'kprj_site_theme_setup');
 
 function kprj_site_theme_assets(): void
 {
+    wp_enqueue_style(
+        'kprj-site-fonts',
+        'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
+        [],
+        null
+    );
     wp_enqueue_style('kprj-site-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
     wp_enqueue_script(
         'kprj-site-script',

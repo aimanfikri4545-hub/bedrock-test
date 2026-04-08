@@ -10,16 +10,22 @@
 
 <header class="site-header">
   <div class="container nav-wrap">
-    <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+    <a class="brand" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?>">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">KPRJ</span>
+    </a>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
-      Menu
+      <span class="menu-line" aria-hidden="true"></span>
+      <span class="menu-line" aria-hidden="true"></span>
+      <span class="menu-line" aria-hidden="true"></span>
+      <span class="screen-reader-text"><?php esc_html_e('Toggle menu', 'kprj-site'); ?></span>
     </button>
 
     <nav id="primary-menu" class="site-nav" aria-label="Primary Navigation">
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#business-core">Business Core</a>
+      <a href="#integrity">Integrity &amp; Governance</a>
+      <a href="#invest">Invest With Us</a>
     </nav>
   </div>
 </header>

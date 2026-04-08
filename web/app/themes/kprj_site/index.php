@@ -1,61 +1,186 @@
+<?php
+$hero_image = 'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1920&q=80';
+$intro_banner = 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1800&q=80';
+$what_large_image = 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1800&q=80';
+$what_side_image_one = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80';
+$what_side_image_two = 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80';
+$invest_image = 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80';
+$township_image = 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1800&q=80';
+$career_image = 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1800&q=80';
+
+$growth_cards = [
+    ['title' => 'Engineering & Construction', 'image' => 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80'],
+    ['title' => 'Property & Asset Management', 'image' => 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?auto=format&fit=crop&w=800&q=80'],
+    ['title' => 'Environment', 'image' => 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80'],
+    ['title' => 'Digital Technology Services', 'image' => 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=800&q=80'],
+];
+
+$reels = [
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=600&q=80',
+    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=600&q=80',
+];
+?>
+
 <?php get_header(); ?>
 
-<main>
-  <section id="top" class="hero">
-    <div class="container">
-      <p class="eyebrow">WordPress + Bedrock</p>
-      <h1>Building a modern and interactive website</h1>
-      <p class="hero-copy">
-        This custom theme is now structured for a cleaner UI, responsive layout, and lightweight interactions.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#features">Explore Features</a>
-        <a class="btn btn-ghost" href="#contact">Get In Touch</a>
-      </div>
+<main class="kprj-home">
+  <section class="hero-block" id="top">
+    <img src="<?php echo esc_url($hero_image); ?>" alt="Johor city and waterfront development view" class="hero-image">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Driving Johor&rsquo;s Infrastructure &amp; Development</h1>
+      <p>A strategic development entity driving sustainable growth, unlocking land value, and shaping transformative communities across Johor.</p>
     </div>
   </section>
 
-  <section id="features" class="section">
+  <section class="logo-intro" id="business-core">
     <div class="container">
-      <h2>Core Features</h2>
-      <div class="grid cards reveal-group">
-        <article class="card reveal">
-          <h3>Responsive Design</h3>
-          <p>Looks great across phones, tablets, and desktops with a fluid layout system.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Fast + Lightweight</h3>
-          <p>No heavy frontend framework required, simple and easy to maintain.</p>
-        </article>
-        <article class="card reveal">
-          <h3>Interactive UI</h3>
-          <p>Navigation toggle and reveal animations make the experience feel dynamic and modern.</p>
-        </article>
-      </div>
+      <img src="<?php echo esc_url($intro_banner); ?>" alt="" class="logo-intro-bg">
+      <div class="logo-intro-wordmark">KPRJ</div>
     </div>
   </section>
 
-  <section id="about" class="section alt">
-    <div class="container split">
+  <section class="what-we-do section-block">
+    <div class="container what-grid">
       <div>
-        <h2>Why Bedrock</h2>
-        <p>
-          Bedrock gives us better structure and dependency management so we can focus on a high-quality experience.
-        </p>
+        <h2>What We Do</h2>
+        <p>KPRJ is a state-linked development entity committed to delivering high-impact projects that strengthen Johor&rsquo;s economic foundation.</p>
+        <p>With a focus on strategic land development, sustainable planning, and long-term value creation, KPRJ plays a key role in shaping the next generation of integrated townships and commercial ecosystems.</p>
+        <a class="btn btn-blue" href="#townships">Know More <span>&raquo;</span></a>
       </div>
-      <div class="panel reveal">
-        <p>
-          Next steps can include custom post types, reusable template parts, and a CMS-driven content strategy.
-        </p>
+      <div class="portrait-card">
+        <img src="<?php echo esc_url($what_side_image_one); ?>" alt="KPRJ professional portrait">
+      </div>
+    </div>
+
+    <div class="container what-media-stack">
+      <img src="<?php echo esc_url($what_large_image); ?>" alt="Aerial city development" class="what-main-image">
+      <div class="floating-shape" aria-hidden="true"></div>
+      <img src="<?php echo esc_url($what_side_image_two); ?>" alt="Nature and community" class="floating-image">
+    </div>
+  </section>
+
+  <section class="invest-band section-block" id="invest">
+    <div class="container invest-panel">
+      <img src="<?php echo esc_url($invest_image); ?>" alt="Investment and planning meeting">
+      <div class="invest-overlay"></div>
+      <div class="invest-copy">
+        <h2>Invest in Johor&rsquo;s Future</h2>
+        <p>KPRJ offers access to high-value infrastructure and property developments shaping Johor&rsquo;s next phase of growth.</p>
+        <a class="btn btn-white" href="#connect">Explore Investment <span>&raquo;</span></a>
+      </div>
+      <div class="invest-points">
+        <p>High Growth Potential</p>
+        <p>Strategic Location</p>
+        <p>Long-term Value</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <div class="container contact-box reveal">
-      <h2>Ready to keep building?</h2>
-      <p>We can now add real content sections, a blog layout, and a polished design system.</p>
-      <a class="btn btn-primary" href="mailto:hello@example.com">Contact Us</a>
+  <section class="growth-block section-block" id="integrity">
+    <div class="container growth-inner">
+      <h2>Building Sustainable Growth for Johor</h2>
+      <div class="growth-grid">
+        <?php foreach ($growth_cards as $card) : ?>
+          <article class="growth-card">
+            <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>">
+            <h3><?php echo esc_html($card['title']); ?></h3>
+            <a href="#connect" class="btn btn-mini">Read More <span>&raquo;</span></a>
+          </article>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+  <section class="impact-block section-block">
+    <div class="container impact-inner">
+      <h2>How We Deliver Impact</h2>
+      <p class="impact-lead">Through strategic planning, responsible development, and community-driven initiatives, KPRJ transforms opportunities into sustainable growth.</p>
+      <div class="impact-grid">
+        <div class="impact-list">
+          <article>
+            <span>Layer 3</span>
+            <h3>Sustainable Value Creation</h3>
+            <p>Our developments are designed to create long-term value, strengthening communities, supporting businesses, and enhancing quality of life.</p>
+          </article>
+          <article>
+            <span>Layer 2</span>
+            <h3>Development &amp; Execution</h3>
+            <p>Through engineering expertise and strong project management, we deliver infrastructure, developments, and initiatives that support Johor&rsquo;s progress.</p>
+          </article>
+          <article>
+            <span>Layer 1</span>
+            <h3>Strategic Planning</h3>
+            <p>We identify high-potential opportunities across Johor and develop plans aligned with economic growth and community needs.</p>
+          </article>
+        </div>
+        <div class="impact-visual" aria-hidden="true">
+          <div class="iso-base"></div>
+          <div class="iso-block a"></div>
+          <div class="iso-block b"></div>
+          <div class="iso-block c"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="township-block section-block" id="townships">
+    <div class="container township-inner">
+      <h2>Township Developments</h2>
+      <p class="township-sub">Nurturing Vibrant Communities!</p>
+      <div class="township-frame"></div>
+      <img src="<?php echo esc_url($township_image); ?>" alt="Township development architecture">
+      <div class="township-meta">
+        <div>
+          <h3>Bangunan Dato&rsquo; Jaafar Muhammad</h3>
+          <p>Iskandar Puteri</p>
+        </div>
+        <a href="#connect">Next</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="connect-block section-block" id="connect">
+    <div class="container">
+      <div class="connect-top">
+        <div>
+          <h2>Ready to Connect?</h2>
+          <p>Discover how we are shaping Johor through real projects, updates, and on-ground impact.</p>
+        </div>
+        <a href="mailto:enquiry@kprj.com.my" class="btn btn-blue">enquiry@kprj.com.my <span>&raquo;</span></a>
+      </div>
+
+      <div class="reel-row">
+        <?php foreach ($reels as $reel) : ?>
+          <article class="reel-card">
+            <img src="<?php echo esc_url($reel); ?>" alt="KPRJ social update preview">
+            <span class="play-icon">▶</span>
+          </article>
+        <?php endforeach; ?>
+      </div>
+
+      <div class="social-row">
+        <p>Follow KPRJ on</p>
+        <a href="#" aria-label="TikTok">T</a>
+        <a href="#" aria-label="Instagram">I</a>
+        <a href="#" aria-label="Facebook">F</a>
+        <a href="#" aria-label="YouTube">Y</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="career-block">
+    <div class="container career-inner">
+      <img src="<?php echo esc_url($career_image); ?>" alt="KPRJ career opportunities" class="career-image">
+      <div class="career-overlay"></div>
+      <div class="career-copy">
+        <h2>Let&rsquo;s Build Your Career Together!</h2>
+        <p>KPRJ Foundation is the dedication and passion of our staff. Join our skilled and enthusiastic team!</p>
+        <a href="#connect" class="btn btn-white">Find More <span>&raquo;</span></a>
+      </div>
     </div>
   </section>
 </main>
