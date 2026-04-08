@@ -8,9 +8,10 @@ function kprj_site_get_landing_data(): array
 {
     return [
         'hero_video' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Kota-Iskandar-1.mp4',
-        'what_large_image' => 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1800&q=80',
-        'what_side_image_one' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80',
-        'what_side_image_two' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80',
+        'what_large_image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/JB.png',
+        'what_side_image_one' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/org.png',
+        'what_side_image_two' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Family.png',
+        'what_shape_image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/3D-material.png',
         'invest_image' => 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80',
         'township_image' => 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1800&q=80',
         'career_image' => 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1800&q=80',

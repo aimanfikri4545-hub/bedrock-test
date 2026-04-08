@@ -31,8 +31,8 @@ $landing = kprj_site_get_landing_data();
 
     <div class="container what-media-stack">
       <img src="<?php echo esc_url($landing['what_large_image']); ?>" alt="Aerial city development" class="what-main-image">
-      <div class="floating-shape" aria-hidden="true"></div>
-      <img src="<?php echo esc_url($landing['what_side_image_two']); ?>" alt="Nature and community" class="floating-image">
+      <img src="<?php echo esc_url($landing['what_shape_image']); ?>" alt="" class="floating-shape-image" aria-hidden="true">
+      <img src="<?php echo esc_url($landing['what_side_image_two']); ?>" alt="Family in nature" class="floating-image">
     </div>
   </section>
 

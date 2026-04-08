@@ -280,59 +280,63 @@ p {
 
 .what-grid {
   display: grid;
-  grid-template-columns: 1.65fr 0.75fr;
-  gap: 2rem;
+  grid-template-columns: 1.55fr 0.66fr;
+  gap: 2.4rem;
   align-items: start;
 }
 
 .what-grid p {
-  font-size: 1.02rem;
-  max-width: 850px;
+  font-size: clamp(1.02rem, 1.45vw, 1.9rem);
+  max-width: 46ch;
+  line-height: 1.45;
 }
 
 .portrait-card {
-  border-radius: var(--radius);
+  border-radius: 10px;
   overflow: hidden;
-  border: 4px solid #4690ff;
-  box-shadow: 0 16px 28px rgba(18, 25, 45, 0.15);
+  border: 8px solid #fff;
+  box-shadow: 0 10px 26px rgba(18, 25, 45, 0.2), 0 0 0 6px #4a97ff;
+  justify-self: end;
+  width: min(100%, 430px);
+  margin-top: 0.4rem;
 }
 
 .portrait-card img {
   width: 100%;
-  height: 380px;
+  height: 565px;
   object-fit: cover;
 }
 
 .what-media-stack {
-  margin-top: -2rem;
+  margin-top: -1.2rem;
   position: relative;
-  padding-right: 220px;
+  padding-right: 280px;
 }
 
 .what-main-image {
-  border-radius: 8px;
-  min-height: 480px;
+  border-radius: 2px;
+  min-height: 860px;
   object-fit: cover;
+  width: 100%;
 }
 
-.floating-shape {
+.floating-shape-image {
   position: absolute;
-  right: 80px;
-  top: 84px;
-  width: 95px;
-  height: 95px;
-  border-radius: 24px;
-  background: radial-gradient(circle at 30% 30%, #dce3ef, #8ca0be 72%);
+  right: 115px;
+  top: 166px;
+  width: 152px;
+  height: auto;
+  filter: drop-shadow(0 12px 20px rgba(18, 25, 45, 0.2));
 }
 
 .floating-image {
   position: absolute;
   right: 0;
-  bottom: -100px;
-  width: 245px;
-  border: 4px solid #a7cbff;
+  bottom: -76px;
+  width: 388px;
+  border: 8px solid #fff;
   border-radius: 12px;
-  box-shadow: 0 16px 28px rgba(18, 25, 45, 0.18);
+  box-shadow: 0 16px 28px rgba(18, 25, 45, 0.18), 0 0 0 5px #9fcbff;
 }
 
 .invest-panel {
@@ -737,7 +741,7 @@ p {
     padding-right: 0;
   }
 
-  .floating-shape,
+  .floating-shape-image,
   .floating-image {
     display: none;
   }
