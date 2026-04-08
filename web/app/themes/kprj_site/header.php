@@ -15,17 +15,17 @@
       <span class="brand-text">KPRJ</span>
     </a>
 
+    <nav id="primary-menu" class="site-nav" aria-label="Primary Navigation">
+      <a href="#business-core">Business Core</a>
+      <a href="#integrity">Integrity &amp; Governance</a>
+      <a href="#invest">Invest With Us</a>
+    </nav>
+
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
       <span class="menu-line" aria-hidden="true"></span>
       <span class="menu-line" aria-hidden="true"></span>
       <span class="menu-line" aria-hidden="true"></span>
       <span class="screen-reader-text"><?php esc_html_e('Toggle menu', 'kprj-site'); ?></span>
     </button>
-
-    <nav id="primary-menu" class="site-nav" aria-label="Primary Navigation">
-      <a href="#business-core">Business Core</a>
-      <a href="#integrity">Integrity &amp; Governance</a>
-      <a href="#invest">Invest With Us</a>
-    </nav>
   </div>
 </header>
