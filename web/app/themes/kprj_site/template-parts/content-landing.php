@@ -5,11 +5,9 @@ $landing = kprj_site_get_landing_data();
 <main class="kprj-home">
   <section class="hero-block" id="top">
     <?php if (!empty($landing['hero_video'])) : ?>
-      <video class="hero-image" autoplay muted loop playsinline preload="metadata" poster="<?php echo esc_url($landing['hero_image']); ?>">
+      <video class="hero-image" autoplay muted loop playsinline preload="metadata">
         <source src="<?php echo esc_url($landing['hero_video']); ?>" type="video/mp4">
       </video>
-    <?php else : ?>
-      <img src="<?php echo esc_url($landing['hero_image']); ?>" alt="Johor city and waterfront development view" class="hero-image">
     <?php endif; ?>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -18,14 +16,7 @@ $landing = kprj_site_get_landing_data();
     </div>
   </section>
 
-  <section class="logo-intro" id="business-core">
-    <div class="container">
-      <img src="<?php echo esc_url($landing['intro_banner']); ?>" alt="" class="logo-intro-bg">
-      <div class="logo-intro-wordmark">KPRJ</div>
-    </div>
-  </section>
-
-  <section class="what-we-do section-block">
+  <section class="what-we-do section-block" id="business-core">
     <div class="container what-grid">
       <div>
         <h2>What We Do</h2>

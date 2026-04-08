@@ -7,9 +7,7 @@ if (!defined('ABSPATH')) {
 function kprj_site_get_landing_data(): array
 {
     return [
-        'hero_image' => 'https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1920&q=80',
-        'hero_video' => 'https://drive.google.com/uc?export=download&id=173P0cpuTHFOKlN4l9k3TOKXEBDqIDnz4',
-        'intro_banner' => 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1800&q=80',
+        'hero_video' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Kota-Iskandar-1.mp4',
         'what_large_image' => 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1800&q=80',
         'what_side_image_one' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80',
         'what_side_image_two' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=700&q=80',
