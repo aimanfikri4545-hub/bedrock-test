@@ -456,6 +456,19 @@ p {
   letter-spacing: -0.01em;
 }
 
+.growth-card {
+  position: relative;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+  transform: translateY(0);
+  border-radius: 12px;
+}
+
+.growth-card:hover,
+.growth-card:focus-within {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 28px rgba(10, 32, 78, 0.18);
+}
+
 .growth-card img {
   display: block;
   width: 100%;
@@ -495,6 +508,12 @@ p {
   background: rgba(0, 68, 196, 0.52);
   font-size: 0.8rem;
   transform: translateY(-0.01rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .growth-card {
+    transition: none;
+  }
 }
 
 .impact-block {
