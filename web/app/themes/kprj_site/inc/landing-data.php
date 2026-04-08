@@ -12,7 +12,7 @@ function kprj_site_get_landing_data(): array
         'what_side_image_one' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/org.png',
         'what_side_image_two' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/Family.png',
         'what_shape_image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/3D-material.png',
-        'invest_image' => 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80',
+        'invest_image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/SRQ-header-Finance.jpg',
         'township_image' => 'https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1800&q=80',
         'career_image' => 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1800&q=80',
         'growth_cards' => [
