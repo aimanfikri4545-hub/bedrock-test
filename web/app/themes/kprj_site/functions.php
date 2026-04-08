@@ -20,18 +20,24 @@ add_action('after_setup_theme', 'kprj_site_theme_setup');
 
 function kprj_site_theme_assets(): void
 {
+    $theme_version = wp_get_theme()->get('Version');
+    $style_path = get_template_directory() . '/style.css';
+    $script_path = get_template_directory() . '/script.js';
+    $style_version = file_exists($style_path) ? (string) filemtime($style_path) : $theme_version;
+    $script_version = file_exists($script_path) ? (string) filemtime($script_path) : $theme_version;
+
     wp_enqueue_style(
         'kprj-site-fonts',
         'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
         [],
         null
     );
-    wp_enqueue_style('kprj-site-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
+    wp_enqueue_style('kprj-site-style', get_stylesheet_uri(), [], $style_version);
     wp_enqueue_script(
         'kprj-site-script',
         get_template_directory_uri() . '/script.js',
         [],
-        wp_get_theme()->get('Version'),
+        $script_version,
         true
     );
 }
