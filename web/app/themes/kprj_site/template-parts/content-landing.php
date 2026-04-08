@@ -171,8 +171,8 @@ $township_first = $township_slides[0];
       <div class="career-overlay"></div>
       <div class="career-copy">
         <h2>Let&rsquo;s Build Your Career Together!</h2>
-        <p>KPRJ Foundation is the dedication and passion of our staff. Join our skilled and enthusiastic team!</p>
-        <a href="#connect" class="btn btn-white">Find More <span>&raquo;</span></a>
+        <p>KPRJ Foundation is the dedication and passion of our staff.<br>Join our skilled and enthusiastic team!</p>
+        <a href="#connect" class="btn btn-white career-btn">Find More <span>&raquo;</span></a>
       </div>
     </div>
   </section>

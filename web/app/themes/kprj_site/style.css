@@ -837,7 +837,11 @@ p {
 .career-inner {
   position: relative;
   overflow: hidden;
-  min-height: 470px;
+  min-height: 620px;
+}
+
+.career-block .container {
+  width: min(100%, 1900px);
 }
 
 .career-image,
@@ -853,23 +857,58 @@ p {
 }
 
 .career-overlay {
-  background: linear-gradient(to right, rgba(18, 97, 211, 0.9), rgba(18, 97, 211, 0.5) 44%, rgba(18, 97, 211, 0.02) 100%);
+  background:
+    linear-gradient(153deg, rgba(161, 205, 255, 0.5) 0 1px, transparent 1px),
+    linear-gradient(153deg, rgba(161, 205, 255, 0.48) 0 1px, transparent 1px),
+    linear-gradient(to right, rgba(18, 97, 211, 0.98) 0 44%, rgba(18, 97, 211, 0.92) 44%, rgba(18, 97, 211, 0.66) 52%, rgba(18, 97, 211, 0.22) 59%, rgba(18, 97, 211, 0) 67%);
+  background-position: left -180px top 170px, left -100px bottom 26px, 0 0;
+  background-repeat: no-repeat;
+  background-size: 150% 1px, 130% 1px, 100% 100%;
 }
 
 .career-copy {
   position: relative;
   z-index: 2;
   color: #fff;
-  max-width: 520px;
-  padding: 100px 2.4rem;
+  max-width: 760px;
+  padding: clamp(4rem, 7vw, 7.2rem) clamp(1.4rem, 5.2vw, 8.4rem);
 }
 
 .career-copy h2 {
   color: #fff;
+  margin: 0 0 1.6rem;
+  max-width: 12ch;
+  font-size: clamp(3rem, 5.2vw, 6.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.015em;
 }
 
 .career-copy p {
   color: rgba(255, 255, 255, 0.95);
+  max-width: 32ch;
+  margin: 0 0 2.35rem;
+  font-size: clamp(1.25rem, 1.65vw, 2rem);
+  line-height: 1.4;
+}
+
+.career-btn {
+  border-radius: 14px;
+  padding: 0.48rem 0.7rem 0.48rem 0.88rem;
+  font-size: clamp(1.25rem, 1.45vw, 1.8rem);
+  font-weight: 700;
+  color: #1462d4;
+  box-shadow: 0 10px 26px rgba(7, 33, 80, 0.14);
+}
+
+.career-btn span {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  background: #e9f0ff;
+  color: #0f57c4;
+  font-size: 1.15em;
 }
 
 .site-footer {
@@ -976,6 +1015,19 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .career-inner {
+    min-height: 520px;
+  }
+
+  .career-copy {
+    padding: 3.2rem 2rem;
+    max-width: 620px;
+  }
+
+  .career-btn {
+    font-size: 1.15rem;
+  }
+
   .impact-grid {
     grid-template-columns: 1fr;
   }
@@ -1070,6 +1122,47 @@ p {
 
   .growth-grid {
     grid-template-columns: 1fr;
+  }
+
+  .career-inner {
+    min-height: 440px;
+  }
+
+  .career-overlay {
+    background:
+      linear-gradient(153deg, rgba(161, 205, 255, 0.32) 0 1px, transparent 1px),
+      linear-gradient(153deg, rgba(161, 205, 255, 0.28) 0 1px, transparent 1px),
+      linear-gradient(to right, rgba(18, 97, 211, 0.95) 0 64%, rgba(18, 97, 211, 0.66) 76%, rgba(18, 97, 211, 0.12) 100%);
+    background-position: left -220px top 120px, left -140px bottom 36px, 0 0;
+    background-repeat: no-repeat;
+    background-size: 170% 1px, 150% 1px, 100% 100%;
+  }
+
+  .career-copy {
+    padding: 2.5rem 1.2rem;
+    max-width: 32rem;
+  }
+
+  .career-copy h2 {
+    font-size: clamp(2.2rem, 9.8vw, 3.6rem);
+    margin-bottom: 1rem;
+  }
+
+  .career-copy p {
+    font-size: clamp(1rem, 4.4vw, 1.3rem);
+    margin-bottom: 1.35rem;
+  }
+
+  .career-btn {
+    font-size: 1rem;
+    border-radius: 12px;
+    padding: 0.42rem 0.6rem 0.42rem 0.76rem;
+  }
+
+  .career-btn span {
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 8px;
   }
 
   .township-meta {
