@@ -646,57 +646,62 @@ p {
   display: block;
   position: relative;
   cursor: pointer;
-  perspective: 1400px;
-  transform-style: preserve-3d;
   border-radius: 0;
   overflow: hidden;
 }
 
 .township-card {
+  position: relative;
+  z-index: 2;
   display: block;
   width: 100%;
   min-height: 560px;
   object-fit: cover;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .township-card-back {
   position: absolute;
   inset: 0;
-  transform: rotateY(90deg);
-  transform-origin: right center;
+  z-index: 1;
+  transform: translateY(26px) scale(0.985);
+  opacity: 0.78;
 }
 
-.township-stack.is-flipping .township-card-front {
-  animation: townshipFlipOut 0.55s ease forwards;
+.township-stack.is-sliding .township-card-front {
+  animation: townshipSlideOut 0.56s cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
 }
 
-.township-stack.is-flipping .township-card-back {
-  animation: townshipFlipIn 0.55s ease forwards;
+.township-stack.is-sliding .township-card-back {
+  animation: townshipSlideIn 0.56s cubic-bezier(0.2, 0.7, 0.25, 1) forwards;
 }
 
-@keyframes townshipFlipOut {
+@keyframes townshipSlideOut {
   from {
-    transform: rotateY(0);
+    transform: translateY(0) scale(1);
     filter: brightness(1);
+    opacity: 1;
   }
 
   to {
-    transform: rotateY(-90deg);
-    filter: brightness(0.82);
+    transform: translateY(92px) scale(0.985);
+    filter: brightness(0.88);
+    opacity: 0;
   }
 }
 
-@keyframes townshipFlipIn {
+@keyframes townshipSlideIn {
   from {
-    transform: rotateY(90deg);
+    transform: translateY(26px) scale(0.985);
     filter: brightness(0.82);
+    opacity: 0.78;
   }
 
   to {
-    transform: rotateY(0);
+    transform: translateY(0) scale(1);
     filter: brightness(1);
+    opacity: 1;
   }
 }
 

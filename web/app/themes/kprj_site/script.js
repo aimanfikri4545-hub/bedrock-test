@@ -41,7 +41,7 @@
 
     if (slides.length > 1) {
       let activeIndex = 0;
-      let isFlipping = false;
+      let isSliding = false;
       let pendingIndex = 1;
 
       const renderMeta = (slide) => {
@@ -49,22 +49,22 @@
         townshipLocation.textContent = slide.location || '';
       };
 
-      const runFlip = () => {
-        if (isFlipping) {
+      const runSlide = () => {
+        if (isSliding) {
           return;
         }
 
-        isFlipping = true;
+        isSliding = true;
         pendingIndex = (activeIndex + 1) % slides.length;
         const nextSlide = slides[pendingIndex];
 
         townshipBack.src = nextSlide.image || '';
         townshipBack.alt = nextSlide.title || '';
-        townshipStack.classList.add('is-flipping');
+        townshipStack.classList.add('is-sliding');
       };
 
       townshipBack.addEventListener('animationend', () => {
-        if (!isFlipping) {
+        if (!isSliding) {
           return;
         }
 
@@ -74,12 +74,12 @@
         renderMeta(nextSlide);
 
         activeIndex = pendingIndex;
-        isFlipping = false;
-        townshipStack.classList.remove('is-flipping');
+        isSliding = false;
+        townshipStack.classList.remove('is-sliding');
       });
 
-      townshipViewport.addEventListener('click', runFlip);
-      townshipNext.addEventListener('click', runFlip);
+      townshipViewport.addEventListener('click', runSlide);
+      townshipNext.addEventListener('click', runSlide);
     }
   }
 })();
