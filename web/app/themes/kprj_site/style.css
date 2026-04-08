@@ -204,6 +204,7 @@ a {
   margin: 0 auto;
   max-width: 760px;
   font-size: clamp(1rem, 1.9vw, 2rem);
+  color: #fff;
 }
 
 h2 {
