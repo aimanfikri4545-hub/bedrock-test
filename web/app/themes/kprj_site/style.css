@@ -458,15 +458,6 @@ p {
 
 .growth-card {
   position: relative;
-  transition: transform 280ms ease, box-shadow 280ms ease;
-  transform: translateY(0);
-  border-radius: 12px;
-}
-
-.growth-card:hover,
-.growth-card:focus-within {
-  transform: translateY(-12px);
-  box-shadow: 0 16px 28px rgba(10, 32, 78, 0.18);
 }
 
 .growth-card img {
@@ -475,6 +466,15 @@ p {
   height: auto;
   object-fit: contain;
   margin-bottom: 1rem;
+  transform: translateY(0) scale(1);
+  transform-origin: center bottom;
+  transition: transform 280ms ease, filter 280ms ease;
+}
+
+.growth-card img:hover,
+.growth-card:focus-within img {
+  transform: translateY(-14px) scale(1.08);
+  filter: drop-shadow(0 18px 28px rgba(10, 32, 78, 0.24));
 }
 
 .growth-card h3 {
@@ -492,10 +492,11 @@ p {
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  border-radius: 8px;
-  padding: 0.38rem 0.62rem 0.38rem 0.58rem;
+  border-radius: 10px;
+  padding: 0.34rem 0.36rem 0.34rem 0.62rem;
   margin-top: 0;
   line-height: 1;
+  transition: transform 280ms ease, box-shadow 280ms ease;
 }
 
 .growth-card .btn-mini span {
@@ -505,13 +506,28 @@ p {
   width: 1.15rem;
   height: 1.15rem;
   border-radius: 5px;
-  background: rgba(0, 68, 196, 0.52);
+  background: #fff;
+  color: #0d55c2;
   font-size: 0.8rem;
   transform: translateY(-0.01rem);
+  transition: transform 280ms ease;
+}
+
+.growth-card img:hover ~ .btn-mini,
+.growth-card:focus-within .btn-mini {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(10, 32, 78, 0.22);
+}
+
+.growth-card img:hover ~ .btn-mini span,
+.growth-card:focus-within .btn-mini span {
+  transform: translate(6px, -0.01rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .growth-card {
+  .growth-card img,
+  .growth-card .btn-mini,
+  .growth-card .btn-mini span {
     transition: none;
   }
 }
