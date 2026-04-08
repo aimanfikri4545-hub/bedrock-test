@@ -30,7 +30,7 @@ function kprj_site_get_landing_data(): array
                 'image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/4.jpg',
             ],
         ],
-        'career_image' => 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1800&q=80',
+        'career_image' => 'http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/ChatGPT-Image-Mar-5-2026-12_45_17-PM-1.png',
         'growth_cards' => [
             [
                 'title' => 'Engineering & Construction',
