@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+require_once __DIR__ . '/inc/landing-data.php';
+
 function kprj_site_theme_setup(): void
 {
     add_theme_support('title-tag');
