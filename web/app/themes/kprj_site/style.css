@@ -78,6 +78,11 @@ a {
   text-decoration: none;
 }
 
+.brand-logo {
+  height: clamp(42px, 2.8vw, 64px);
+  width: auto;
+}
+
 .brand-mark {
   width: 26px;
   height: 18px;
@@ -683,6 +688,10 @@ p {
   font-size: 1.85rem;
 }
 
+.brand-footer .brand-logo {
+  height: 46px;
+}
+
 .footer-copy {
   color: rgba(230, 236, 248, 0.8);
   max-width: 370px;
@@ -753,6 +762,10 @@ p {
 @media (max-width: 780px) {
   .site-header {
     top: 0.8rem;
+  }
+
+  .brand-logo {
+    height: 40px;
   }
 
   .brand-text {

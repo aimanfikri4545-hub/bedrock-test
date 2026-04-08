@@ -11,8 +11,7 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?>">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">KPRJ</span>
+      <img class="brand-logo" src="<?php echo esc_url('http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/download-removebg-preview.png'); ?>" alt="KPRJ">
     </a>
 
     <nav id="primary-menu" class="site-nav" aria-label="Primary Navigation">

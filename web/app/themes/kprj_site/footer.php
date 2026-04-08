@@ -2,8 +2,7 @@
   <div class="container footer-main">
     <div>
       <a class="brand brand-footer" href="<?php echo esc_url(home_url('/')); ?>">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">KPRJ</span>
+        <img class="brand-logo" src="<?php echo esc_url('http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/download-removebg-preview.png'); ?>" alt="KPRJ">
       </a>
       <p class="footer-copy">
         Crafting spaces that inspire. We believe in the power of thoughtful design to transform how we live, work, and connect.
