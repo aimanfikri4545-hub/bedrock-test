@@ -1,5 +1,15 @@
 <?php
 $landing = kprj_site_get_landing_data();
+$township_slides = !empty($landing['township_slides']) && is_array($landing['township_slides'])
+  ? $landing['township_slides']
+  : [
+      [
+        'title' => 'Bangunan Dato&rsquo; Jaafar Muhammad',
+        'location' => 'Iskandar Puteri',
+        'image' => '',
+      ],
+    ];
+$township_first = $township_slides[0];
 ?>
 
 <main class="kprj-home">
@@ -104,14 +114,24 @@ $landing = kprj_site_get_landing_data();
     <div class="container township-inner">
       <h2>Township Developments</h2>
       <p class="township-sub">Nurturing Vibrant Communities!</p>
-      <div class="township-frame"></div>
-      <img src="<?php echo esc_url($landing['township_image']); ?>" alt="Township development architecture">
+
+      <div class="township-stack" data-township-slides="<?php echo esc_attr(wp_json_encode($township_slides)); ?>">
+        <div class="township-frame township-frame-back-two" aria-hidden="true"></div>
+        <div class="township-frame township-frame-back-one" aria-hidden="true"></div>
+        <div class="township-frame township-frame-front" aria-hidden="true"></div>
+
+        <button class="township-viewport" type="button" aria-label="Show next township image">
+          <img src="<?php echo esc_url($township_first['image']); ?>" alt="<?php echo esc_attr(wp_strip_all_tags($township_first['title'])); ?>" class="township-card township-card-front">
+          <img src="<?php echo esc_url($township_first['image']); ?>" alt="" class="township-card township-card-back" aria-hidden="true">
+        </button>
+      </div>
+
       <div class="township-meta">
         <div>
-          <h3>Bangunan Dato&rsquo; Jaafar Muhammad</h3>
-          <p>Iskandar Puteri</p>
+          <h3 class="township-title"><?php echo wp_kses_post($township_first['title']); ?></h3>
+          <p class="township-location"><?php echo esc_html($township_first['location']); ?></p>
         </div>
-        <a href="#connect">Next</a>
+        <button class="township-next" type="button"><span>&rarr;</span> Next</button>
       </div>
     </div>
   </section>

@@ -587,7 +587,7 @@ p {
 }
 
 .township-inner {
-  max-width: 900px;
+  width: min(100% - 6rem, 1180px);
 }
 
 .township-inner h2,
@@ -595,21 +595,109 @@ p {
   text-align: center;
 }
 
+.township-inner h2 {
+  margin: 0 0 0.65rem;
+  color: #1361d3;
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
 .township-sub {
   margin-bottom: 2rem;
+  font-size: clamp(1.1rem, 1.6vw, 2rem);
+  color: #131826;
 }
 
 .township-frame {
-  width: 84%;
-  height: 58px;
-  margin: 0 auto -38px;
-  background: linear-gradient(to bottom, #d9e8fa, #c1daf6);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  background: #b6d1f2;
 }
 
-.township-inner > img {
+.township-stack {
+  position: relative;
+  padding-top: 74px;
+}
+
+.township-frame-back-two {
+  top: 0;
+  width: 69%;
+  background: #cfdff1;
+}
+
+.township-frame-back-one {
+  top: 16px;
+  width: 78%;
+  background: #bfd5ee;
+}
+
+.township-frame-front {
+  top: 32px;
+  width: 88%;
+  background: #a8c7ea;
+}
+
+.township-viewport {
   width: 100%;
-  min-height: 420px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.township-card {
+  display: block;
+  width: 100%;
+  min-height: 560px;
   object-fit: cover;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.township-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(90deg);
+  transform-origin: right center;
+}
+
+.township-stack.is-flipping .township-card-front {
+  animation: townshipFlipOut 0.55s ease forwards;
+}
+
+.township-stack.is-flipping .township-card-back {
+  animation: townshipFlipIn 0.55s ease forwards;
+}
+
+@keyframes townshipFlipOut {
+  from {
+    transform: rotateY(0);
+    filter: brightness(1);
+  }
+
+  to {
+    transform: rotateY(-90deg);
+    filter: brightness(0.82);
+  }
+}
+
+@keyframes townshipFlipIn {
+  from {
+    transform: rotateY(90deg);
+    filter: brightness(0.82);
+  }
+
+  to {
+    transform: rotateY(0);
+    filter: brightness(1);
+  }
 }
 
 .township-meta {
@@ -621,18 +709,30 @@ p {
 }
 
 .township-meta h3 {
-  font-size: 2.1rem;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
   margin-bottom: 0.3rem;
 }
 
 .township-meta p {
   margin: 0;
+  font-size: clamp(1.25rem, 1.7vw, 2.2rem);
 }
 
-.township-meta a {
+.township-next {
   color: var(--blue);
-  text-decoration: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-weight: 600;
+  font-size: clamp(1rem, 1.4vw, 1.8rem);
+}
+
+.township-next span {
+  font-size: 1.05em;
 }
 
 .connect-block {
@@ -828,6 +928,14 @@ p {
   .floating-shape-image,
   .floating-image {
     display: none;
+  }
+
+  .township-inner {
+    width: min(100% - 2rem, var(--container));
+  }
+
+  .township-card {
+    min-height: 420px;
   }
 
   .growth-block {
