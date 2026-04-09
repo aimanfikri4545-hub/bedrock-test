@@ -204,21 +204,25 @@ a {
 .hero-intro-screen {
   display: grid;
   place-items: center;
-  background:
-    radial-gradient(circle at top center, rgba(19, 97, 211, 0.1), transparent 42%),
-    linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%);
-  pointer-events: auto;
+  background: #f8f9ff;
+  pointer-events: none;
 }
 
 .hero-intro-screen::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(19, 97, 211, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(19, 97, 211, 0.05) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at center, #000 36%, transparent 86%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 245, 255, 0.96));
+}
+
+.hero-intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: -16% -10%;
+  background: linear-gradient(135deg, #0f59cf 0%, #1771ff 100%);
+  clip-path: ellipse(18% 54% at 110% 50%);
+  opacity: 0;
+  transform: translateX(0);
 }
 
 .hero-intro-mark {
@@ -236,6 +240,8 @@ a {
   width: min(82vw, 1120px);
   max-width: none;
   margin-inline: auto;
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 .section-block {
@@ -331,7 +337,16 @@ body.hero-stage-logo .hero-intro-screen {
   opacity: 1;
   transform: scale(1);
   visibility: visible;
-  pointer-events: auto;
+  pointer-events: none;
+}
+
+body.hero-stage-logo .hero-intro-screen::after {
+  animation: heroCurveWipe 1.28s cubic-bezier(0.2, 0.76, 0.18, 1) forwards;
+  opacity: 1;
+}
+
+body.hero-stage-logo .hero-intro-logo {
+  animation: heroLogoReveal 560ms cubic-bezier(0.16, 0.84, 0.24, 1) 420ms forwards;
 }
 
 body.hero-stage-complete .hero-sequence {
@@ -350,6 +365,40 @@ body.is-scrolled .site-header::before {
   background: rgba(246, 248, 252, 0.92);
   box-shadow: 0 14px 34px rgba(14, 28, 59, 0.08);
   backdrop-filter: blur(18px);
+}
+
+@keyframes heroCurveWipe {
+  0% {
+    clip-path: ellipse(18% 54% at 110% 50%);
+    opacity: 1;
+  }
+
+  45% {
+    clip-path: ellipse(44% 78% at 67% 50%);
+    opacity: 1;
+  }
+
+  72% {
+    clip-path: ellipse(52% 86% at 12% 50%);
+    opacity: 1;
+  }
+
+  100% {
+    clip-path: ellipse(22% 56% at -18% 50%);
+    opacity: 1;
+  }
+}
+
+@keyframes heroLogoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .hero-content h1 {

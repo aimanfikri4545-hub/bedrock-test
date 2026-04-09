@@ -16,6 +16,7 @@
 
   if (heroSequence && introPanel && heroPanel && whatWeDoSection) {
     const stageClasses = ['hero-stage-hero', 'hero-stage-logo', 'hero-stage-complete'];
+    let transitionTimerId = 0;
 
     const setHeroStage = (stageName) => {
       body.classList.remove(...stageClasses);
@@ -36,9 +37,15 @@
     };
 
     const activateLogoStage = () => {
-      if (body.classList.contains('hero-stage-hero')) {
-        setHeroStage('hero-stage-logo');
+      if (!body.classList.contains('hero-stage-hero')) {
+        return;
       }
+
+      window.clearTimeout(transitionTimerId);
+      setHeroStage('hero-stage-logo');
+      transitionTimerId = window.setTimeout(() => {
+        completeHeroSequence();
+      }, 1650);
     };
 
     const handleSequenceKeydown = (event, callback) => {
@@ -63,14 +70,6 @@
 
     heroPanel.addEventListener('keydown', (event) => {
       handleSequenceKeydown(event, activateLogoStage);
-    });
-
-    introPanel.addEventListener('click', () => {
-      completeHeroSequence();
-    });
-
-    introPanel.addEventListener('keydown', (event) => {
-      handleSequenceKeydown(event, () => completeHeroSequence());
     });
 
     nav?.querySelectorAll('a[href^="#"]').forEach((link) => {
