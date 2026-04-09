@@ -15,7 +15,7 @@
   window.addEventListener('scroll', markHeaderScrolled, { passive: true });
 
   if (heroSequence && introPanel && heroPanel && whatWeDoSection) {
-    const stageClasses = ['hero-stage-intro', 'hero-stage-video', 'hero-stage-complete'];
+    const stageClasses = ['hero-stage-hero', 'hero-stage-logo', 'hero-stage-complete'];
 
     const setHeroStage = (stageName) => {
       body.classList.remove(...stageClasses);
@@ -35,9 +35,9 @@
       }, 120);
     };
 
-    const activateHeroVideo = () => {
-      if (body.classList.contains('hero-stage-intro')) {
-        setHeroStage('hero-stage-video');
+    const activateLogoStage = () => {
+      if (body.classList.contains('hero-stage-hero')) {
+        setHeroStage('hero-stage-logo');
       }
     };
 
@@ -50,23 +50,26 @@
       callback();
     };
 
-    setHeroStage('hero-stage-intro');
+    setHeroStage('hero-stage-hero');
     body.classList.add('hero-sequence-active');
-
-    introPanel.addEventListener('click', activateHeroVideo);
-    introPanel.addEventListener('keydown', (event) => {
-      handleSequenceKeydown(event, activateHeroVideo);
-    });
 
     heroPanel.addEventListener('click', (event) => {
       if (event.target.closest('a')) {
         return;
       }
 
-      completeHeroSequence();
+      activateLogoStage();
     });
 
     heroPanel.addEventListener('keydown', (event) => {
+      handleSequenceKeydown(event, activateLogoStage);
+    });
+
+    introPanel.addEventListener('click', () => {
+      completeHeroSequence();
+    });
+
+    introPanel.addEventListener('keydown', (event) => {
       handleSequenceKeydown(event, () => completeHeroSequence());
     });
 
