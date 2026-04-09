@@ -1,6 +1,91 @@
 (() => {
+  const body = document.body;
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.site-nav');
+  const heroSequence = document.querySelector('[data-hero-sequence]');
+  const introPanel = heroSequence?.querySelector('[data-hero-panel="intro"]');
+  const heroPanel = heroSequence?.querySelector('[data-hero-panel="hero"]');
+  const whatWeDoSection = document.querySelector('#business-core');
+
+  const markHeaderScrolled = () => {
+    body.classList.toggle('is-scrolled', window.scrollY > 24);
+  };
+
+  markHeaderScrolled();
+  window.addEventListener('scroll', markHeaderScrolled, { passive: true });
+
+  if (heroSequence && introPanel && heroPanel && whatWeDoSection) {
+    const stageClasses = ['hero-stage-intro', 'hero-stage-video', 'hero-stage-complete'];
+
+    const setHeroStage = (stageName) => {
+      body.classList.remove(...stageClasses);
+      body.classList.add(stageName);
+    };
+
+    const completeHeroSequence = (targetSection = whatWeDoSection) => {
+      if (body.classList.contains('hero-stage-complete')) {
+        return;
+      }
+
+      setHeroStage('hero-stage-complete');
+      body.classList.remove('hero-sequence-active');
+      window.setTimeout(() => {
+        heroSequence.setAttribute('hidden', '');
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    };
+
+    const activateHeroVideo = () => {
+      if (body.classList.contains('hero-stage-intro')) {
+        setHeroStage('hero-stage-video');
+      }
+    };
+
+    const handleSequenceKeydown = (event, callback) => {
+      if (event.key !== 'Enter' && event.key !== ' ') {
+        return;
+      }
+
+      event.preventDefault();
+      callback();
+    };
+
+    setHeroStage('hero-stage-intro');
+    body.classList.add('hero-sequence-active');
+
+    introPanel.addEventListener('click', activateHeroVideo);
+    introPanel.addEventListener('keydown', (event) => {
+      handleSequenceKeydown(event, activateHeroVideo);
+    });
+
+    heroPanel.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        return;
+      }
+
+      completeHeroSequence();
+    });
+
+    heroPanel.addEventListener('keydown', (event) => {
+      handleSequenceKeydown(event, () => completeHeroSequence());
+    });
+
+    nav?.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const targetId = link.getAttribute('href');
+        const targetSection = targetId ? document.querySelector(targetId) : null;
+
+        if (!targetSection) {
+          return;
+        }
+
+        if (!body.classList.contains('hero-stage-complete')) {
+          event.preventDefault();
+          completeHeroSequence(targetSection);
+        }
+      });
+    });
+  }
 
   if (menuButton && nav) {
     menuButton.addEventListener('click', () => {

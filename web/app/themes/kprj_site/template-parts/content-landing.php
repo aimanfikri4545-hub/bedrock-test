@@ -13,17 +13,29 @@ $township_first = $township_slides[0];
 ?>
 
 <main class="kprj-home">
-  <section class="hero-block" id="top">
-    <?php if (!empty($landing['hero_video'])) : ?>
-      <video class="hero-image" autoplay muted loop playsinline preload="metadata">
-        <source src="<?php echo esc_url($landing['hero_video']); ?>" type="video/mp4">
-      </video>
-    <?php endif; ?>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Driving Johor&rsquo;s Infrastructure &amp; Development</h1>
-      <p>A strategic development entity driving sustainable growth, unlocking land value, and shaping transformative communities across Johor.</p>
+  <section class="hero-sequence" data-hero-sequence aria-label="KPRJ intro sequence">
+    <div class="hero-intro-screen hero-sequence-panel" data-hero-panel="intro" role="button" tabindex="0" aria-label="Enter KPRJ site">
+      <div class="hero-intro-mark">
+        <img
+          class="hero-intro-logo"
+          src="<?php echo esc_url('http://kprj-bedrock.o1bjaqnnfr-xoy4ww8g4pwr.s.temp-site.link/app/uploads/2026/04/download-removebg-preview.png'); ?>"
+          alt="KPRJ"
+        >
+      </div>
     </div>
+
+    <section class="hero-block hero-sequence-panel" id="top" data-hero-panel="hero" role="button" tabindex="0" aria-label="Continue to What We Do">
+      <?php if (!empty($landing['hero_video'])) : ?>
+        <video class="hero-image" autoplay muted loop playsinline preload="metadata">
+          <source src="<?php echo esc_url($landing['hero_video']); ?>" type="video/mp4">
+        </video>
+      <?php endif; ?>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Driving Johor&rsquo;s Infrastructure &amp; Development</h1>
+        <p>A strategic development entity driving sustainable growth, unlocking land value, and shaping transformative communities across Johor.</p>
+      </div>
+    </section>
   </section>
 
   <section class="what-we-do section-block" id="business-core">

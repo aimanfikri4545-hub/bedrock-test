@@ -37,6 +37,11 @@ body {
   line-height: 1.45;
 }
 
+body.hero-sequence-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -52,14 +57,25 @@ a {
 }
 
 .site-header {
-  position: absolute;
-  top: 1.4rem;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 60;
-  background: transparent;
+  padding: 1rem 0;
   border: 0;
-  backdrop-filter: none;
+  transition: padding 280ms ease, color 280ms ease;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(0);
+  transition: background 280ms ease, box-shadow 280ms ease, backdrop-filter 280ms ease;
+  z-index: -1;
 }
 
 .nav-wrap {
@@ -128,11 +144,11 @@ a {
   text-decoration: none;
   font-weight: 500;
   font-size: clamp(1rem, 1.05vw, 1.75rem);
-  color: rgba(255, 255, 255, 0.95);
+  color: #1b2740;
 }
 
 .site-nav a:hover {
-  color: #fff;
+  color: var(--blue);
 }
 
 .menu-toggle {
@@ -151,7 +167,7 @@ a {
   display: block;
   width: 100%;
   height: 2px;
-  background: #fff;
+  background: #1b2740;
 }
 
 .screen-reader-text {
@@ -167,19 +183,78 @@ a {
   gap: 0;
 }
 
+.kprj-home section[id] {
+  scroll-margin-top: 110px;
+}
+
+.hero-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  overflow: clip;
+}
+
+.hero-sequence-panel {
+  position: absolute;
+  inset: 0;
+  transition: opacity 760ms cubic-bezier(0.22, 0.74, 0.25, 1), transform 760ms cubic-bezier(0.22, 0.74, 0.25, 1), visibility 0s linear 760ms;
+}
+
+.hero-intro-screen {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top center, rgba(19, 97, 211, 0.1), transparent 42%),
+    linear-gradient(180deg, #f9fbff 0%, #eef3fb 100%);
+  pointer-events: auto;
+}
+
+.hero-intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(19, 97, 211, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 97, 211, 0.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, #000 36%, transparent 86%);
+}
+
+.hero-intro-mark {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  text-align: center;
+  width: min(88vw, 1160px);
+  padding: 0 2rem;
+}
+
+.hero-intro-logo {
+  width: min(82vw, 1120px);
+  max-width: none;
+  margin-inline: auto;
+}
+
 .section-block {
   padding: 2.4rem 0;
 }
 
 .hero-block {
-  position: relative;
-  min-height: clamp(700px, 92vh, 980px);
+  position: absolute;
+  inset: 0;
+  min-height: 100svh;
   display: grid;
   place-items: center;
-  margin: 1.4rem auto 0;
-  width: min(100% - 2.8rem, 1800px);
+  margin: 0;
+  width: 100%;
   overflow: hidden;
   background: #101722;
+  opacity: 0;
+  transform: scale(1.03);
+  pointer-events: none;
 }
 
 .hero-image,
@@ -208,6 +283,60 @@ a {
   color: #fff;
   padding: clamp(4rem, 9vh, 6.5rem) 1rem 1.8rem;
   transform: translateY(0);
+}
+
+body.hero-stage-intro .site-header::before {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: blur(0);
+}
+
+body.hero-stage-video .site-header::before {
+  background: linear-gradient(to bottom, rgba(9, 15, 28, 0.46), rgba(9, 15, 28, 0.04));
+}
+
+body.hero-stage-video .site-nav a,
+body.hero-stage-video .brand-text {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+body.hero-stage-video .site-nav a:hover {
+  color: #fff;
+}
+
+body.hero-stage-video .menu-line {
+  background: #fff;
+}
+
+body.hero-stage-video .hero-block {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+body.hero-stage-video .hero-intro-screen {
+  opacity: 0;
+  transform: translateY(-8vh) scale(0.985);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.hero-stage-complete .hero-sequence {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 720ms ease, visibility 0s linear 720ms;
+}
+
+body.hero-stage-complete .site-header,
+body.is-scrolled .site-header {
+  padding: 0.55rem 0;
+}
+
+body.hero-stage-complete .site-header::before,
+body.is-scrolled .site-header::before {
+  background: rgba(246, 248, 252, 0.92);
+  box-shadow: 0 14px 34px rgba(14, 28, 59, 0.08);
+  backdrop-filter: blur(18px);
 }
 
 .hero-content h1 {
@@ -1085,7 +1214,7 @@ p {
 
 @media (max-width: 780px) {
   .site-header {
-    top: 0.8rem;
+    padding: 0.8rem 0;
   }
 
   .brand-logo {
@@ -1098,11 +1227,11 @@ p {
 
   .site-nav {
     position: absolute;
-    top: 74px;
+    top: 72px;
     left: 1rem;
     right: 1rem;
-    background: rgba(12, 18, 34, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(246, 248, 252, 0.96);
+    border: 1px solid rgba(19, 39, 76, 0.12);
     border-radius: 10px;
     padding: 0.7rem;
     display: none;
@@ -1115,22 +1244,33 @@ p {
 
   .site-nav a {
     font-size: 1rem;
-    color: #fff;
+    color: #1b2740;
   }
 
   .site-nav.is-open {
     display: flex;
   }
 
+  body.hero-stage-video .site-nav {
+    background: rgba(12, 18, 34, 0.92);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  body.hero-stage-video .site-nav a {
+    color: #fff;
+  }
+
+  .hero-intro-logo {
+    width: min(92vw, 640px);
+  }
+
   .hero-block {
-    min-height: 78vh;
-    width: calc(100% - 1.2rem);
-    margin-top: 0.8rem;
+    min-height: 100svh;
   }
 
   .hero-content {
     gap: 0.85rem;
-    padding: 4.8rem 0.9rem 1.2rem;
+    padding: 6rem 0.9rem 1.2rem;
   }
 
   .hero-content h1 {
